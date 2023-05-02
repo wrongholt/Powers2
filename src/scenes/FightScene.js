@@ -9,6 +9,7 @@ class FightScene extends Phaser.Scene {
   create() {
     var newHeight = this.game.config.height;
     var newWidth = this.game.config.width;
+    var character = ['Charity', 'LarsThundersquat'];
     let background = this.add.video(0, 0, 'background');
     background.setOrigin(0, 0);
     background.setSize(this.game.config.width, this.game.config.height);
@@ -17,48 +18,48 @@ class FightScene extends Phaser.Scene {
 
     this.leftChar = new CharacterClass(
       this,
-      newWidth / 6 - 10,
-      newHeight / 2,
+      -100,
+      50,
       'Charity',
       'CharityIdle_000.png'
     );
 
-    this.rightChar = this.add
-      .sprite(
-        newWidth / 1.2 - 15,
-        newHeight / 2,
-        'LarsThundersquat',
-        'LarsThundersquatIdle_000.png'
-      )
+    this.rightChar = new CharacterClass(
+      this,
+      650,
+      50,
+      'LarsThundersquat',
+      'LarsThundersquatIdle_000.png'
+    )
       .setInteractive()
       .setData({ name: 'Grandpa Gator', id: 'LarsThundersquat' })
       .setScale(newWidth / 1200);
     this.rightChar.flipX = true;
 
-    var frameNames = this.anims.generateFrameNames('Charity', {
-      start: 0,
-      end: 19,
-      zeroPad: 3,
-      prefix: 'CharityIdle_',
-      suffix: '.png',
-    });
-    var frameNames2 = this.anims.generateFrameNames('LarsThundersquat', {
-      start: 0,
-      end: 19,
-      zeroPad: 3,
-      prefix: 'LarsThundersquatIdle_',
-      suffix: '.png',
-    });
+    // this.frameNames = this.anims.generateFrameNames('Charity', {
+    //   start: 0,
+    //   end: 19,
+    //   zeroPad: 3,
+    //   prefix: 'CharityIdle_',
+    //   suffix: '.png',
+    // });
+    // var frameNames2 = this.anims.generateFrameNames('LarsThundersquat', {
+    //   start: 0,
+    //   end: 19,
+    //   zeroPad: 3,
+    //   prefix: 'LarsThundersquatIdle_',
+    //   suffix: '.png',
+    // });
 
     this.anims.create({
       key: 'character1animation',
-      frames: frameNames,
+      frames: this[character[0]],
       frameRate: 8,
       repeat: -1,
     });
     this.anims.create({
       key: 'character2animation',
-      frames: frameNames2,
+      frames: this[character[1]],
       frameRate: 8,
       repeat: -1,
     });
