@@ -38,7 +38,7 @@ class HomeScene extends Phaser.Scene {
     button.on('pointerdown', function (pointer) {
       this.setTint(11843512);
       button1Text.setFontSize('3.5vh');
-      this.scene.scene.start('FightScene');
+      this.scene.scene.start('CharacterSelectionScene');
     });
     button.on('pointerover', function (pointer) {
       this.setTint(11843512);

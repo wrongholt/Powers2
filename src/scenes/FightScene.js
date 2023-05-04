@@ -26,30 +26,12 @@ class FightScene extends Phaser.Scene {
 
     this.rightChar = new CharacterClass(
       this,
-      650,
+      550,
       50,
       'LarsThundersquat',
       'LarsThundersquatIdle_000.png'
-    )
-      .setInteractive()
-      .setData({ name: 'Grandpa Gator', id: 'LarsThundersquat' })
-      .setScale(newWidth / 1200);
+    ).setData({ name: 'Grandpa Gator', id: 'LarsThundersquat' });
     this.rightChar.flipX = true;
-
-    // this.frameNames = this.anims.generateFrameNames('Charity', {
-    //   start: 0,
-    //   end: 19,
-    //   zeroPad: 3,
-    //   prefix: 'CharityIdle_',
-    //   suffix: '.png',
-    // });
-    // var frameNames2 = this.anims.generateFrameNames('LarsThundersquat', {
-    //   start: 0,
-    //   end: 19,
-    //   zeroPad: 3,
-    //   prefix: 'LarsThundersquatIdle_',
-    //   suffix: '.png',
-    // });
 
     this.anims.create({
       key: 'character1animation',
@@ -83,15 +65,5 @@ class FightScene extends Phaser.Scene {
     });
   }
 }
-class CustomSpineObject3 {
-  constructor(scene, x, y, key, animationName, loop) {
-    this.scene = scene;
 
-    this.parent = scene.add.container(0, 0);
-
-    this.spine = scene.make.spine({ scene, x, y, key, animationName, loop });
-
-    this.parent.add(this.spine);
-  }
-}
 export default FightScene;

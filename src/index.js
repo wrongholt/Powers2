@@ -2,6 +2,7 @@ import './styles.scss';
 import HomeScene from './scenes/HomeScene.js';
 import Preloader from './scenes/Preloader.js';
 import FightScene from './scenes/FightScene.js';
+import CharacterSelectionScene from './scenes/CharacterSelectionScene.js';
 
 var newHeight = window.innerHeight;
 var newWidth = window.innerWidth - 25;
@@ -15,6 +16,7 @@ class Game extends Phaser.Game {
     });
     this.scene.add('HomeScene', HomeScene);
     this.scene.add('Preloader', Preloader);
+    this.scene.add('CharacterSelectionScene', CharacterSelectionScene);
     this.scene.add('FightScene', fightScene);
     this.scene.start('Preloader');
   }
