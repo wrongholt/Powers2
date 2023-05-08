@@ -131,6 +131,47 @@ class CharacterSelectionScene extends Phaser.Scene {
     });
   }
 }
+// Add 13 characters to the scene, randomly spread out without overlapping
+// var characters = [];
+
+// for (var i = 0; i < 13; i++) {
+//   var character = new Phaser.Sprite({
+//     key: 'character' + i,
+//     x: 0,
+//     y: 0,
+//     src: 'assets/characters/character' + i + '.png'
+//   });
+
+//   // Check if the character can be placed at the current location
+//   var canPlace = true;
+
+//   for (var j = 0; j < characters.length; j++) {
+//     if (characters[j].x === character.x && characters[j].y === character.y) {
+//       canPlace = false;
+//       break;
+//     }
+//   }
+
+//   // If the character can be placed, add it to the scene
+//   if (canPlace) {
+//     characters.push(character);
+//     mainScene.add(character);
+//   }
+// }
+// Add 13 characters to the scene, randomly spread out on a grid of random size
+// var width = Math.floor(Math.random() * 2) + 2;
+// var height = Math.floor(Math.random() * 2) + 2;
+
+// for (var i = 0; i < 13; i++) {
+//   var character = new Phaser.Sprite({
+//     key: 'character' + i,
+//     x: Math.floor(Math.random() * game.width / width) * width,
+//     y: Math.floor(Math.random() * game.height / height) * height,
+//     src: 'assets/characters/character' + i + '.png'
+//   });
+
+//   mainScene.add(character);
+// }
 function chacterContainer(scene) {
   const charArray = [
     'Argus',
