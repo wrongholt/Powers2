@@ -25,10 +25,64 @@ class BootScene extends Phaser.Scene {
       'button',
       'https://d1ofwchetll7ui.cloudfront.net/button.png'
     );
+
     this.load.image(
       'button_hover',
       'https://d1ofwchetll7ui.cloudfront.net/button_hover.png'
     );
+    this.load.image(
+      'CharityAvatar',
+      'https://d1ofwchetll7ui.cloudfront.net/avatars/Charity.png'
+    );
+    this.load.image(
+      'ArgusAvatar',
+      'https://d1ofwchetll7ui.cloudfront.net/avatars/Argus.png'
+    );
+    this.load.image(
+      'CaptainNemoAvatar',
+      'https://d1ofwchetll7ui.cloudfront.net/avatars/CaptainNemo.png'
+    );
+    this.load.image(
+      'DejahThorisAvatar',
+      'https://d1ofwchetll7ui.cloudfront.net/avatars/DejahThoris.png'
+    );
+    this.load.image(
+      'EdgeAvatar',
+      'https://d1ofwchetll7ui.cloudfront.net/avatars/Edge.png'
+    );
+    this.load.image(
+      'ElectricMeanAvatar',
+      'https://d1ofwchetll7ui.cloudfront.net/avatars/ElectricMean.png'
+    );
+    this.load.image(
+      'ElkeemaNemoAvatar',
+      'https://d1ofwchetll7ui.cloudfront.net/avatars/Elkeema.png'
+    );
+    this.load.image(
+      'JohnCarterAvatar',
+      'https://d1ofwchetll7ui.cloudfront.net/avatars/JohnCarter.png'
+    );
+    this.load.image(
+      'KarriganAvatar',
+      'https://d1ofwchetll7ui.cloudfront.net/avatars/Karrigan.png'
+    );
+    this.load.image(
+      'LarsThundersquatAvatar',
+      'https://d1ofwchetll7ui.cloudfront.net/avatars/LarsThundersquat.png'
+    );
+    this.load.image(
+      'LillithAvatar',
+      'https://d1ofwchetll7ui.cloudfront.net/avatars/Lillith.png'
+    );
+    this.load.image(
+      'RandellAvatar',
+      'https://d1ofwchetll7ui.cloudfront.net/avatars/Randell.png'
+    );
+    this.load.image(
+      'SharpySharpAvatar',
+      'https://d1ofwchetll7ui.cloudfront.net/avatars/SharpySharp.png'
+    );
+
     this.load.multiatlas(
       'Charity',
       'https://d1ofwchetll7ui.cloudfront.net/Charity.json',
