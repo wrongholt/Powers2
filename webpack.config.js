@@ -9,6 +9,9 @@ module.exports = {
     contentBase: [path.join(__dirname, 'src'), path.join(__dirname, 'dist')],
     watchContentBase: true,
     liveReload: true,
+    headers: {
+      'Access-Control-Allow-Origin': '*',
+    },
   },
   module: {
     rules: [

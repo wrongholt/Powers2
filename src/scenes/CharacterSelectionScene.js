@@ -204,13 +204,13 @@ function chacterContainer(scene) {
       character,
       character + 'Idle_000.png'
     );
-
+    window[character + 'token'] = scene.add.image(0, 0, character + 'avatar');
     // group[i].add(rect);
     // group[i].add(char);
     // i % 1 ? 20 : i * 100 + 20,
     // i % 2 ? newHeight / 2 + 20 : 20,
     window['character' + i].setScale(0.6);
-    newChar.push(window['character' + i]);
+    newChar.push(window[character + 'token']);
     i++;
   }
   console.log('NEW CHAR ARRAY!!!!!!!', newChar);
