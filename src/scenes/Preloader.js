@@ -32,55 +32,55 @@ class BootScene extends Phaser.Scene {
     );
     this.load.image(
       'CharityAvatar',
-      'https://d1ofwchetll7ui.cloudfront.net/avatars/Charity.png'
+      'https://d1ofwchetll7ui.cloudfront.net/CharityAvatar.png'
     );
     this.load.image(
       'ArgusAvatar',
-      'https://d1ofwchetll7ui.cloudfront.net/avatars/Argus.png'
+      'https://powers.s3.amazonaws.com/ArgusAvatar.png'
     );
     this.load.image(
       'CaptainNemoAvatar',
-      'https://d1ofwchetll7ui.cloudfront.net/avatars/CaptainNemo.png'
+      'https://d1ofwchetll7ui.cloudfront.net/CaptainNemoAvatar.png'
     );
     this.load.image(
       'DejahThorisAvatar',
-      'https://d1ofwchetll7ui.cloudfront.net/avatars/DejahThoris.png'
+      'https://d1ofwchetll7ui.cloudfront.net/DejahThorisAvatar.png'
     );
     this.load.image(
       'EdgeAvatar',
-      'https://d1ofwchetll7ui.cloudfront.net/avatars/Edge.png'
+      'https://d1ofwchetll7ui.cloudfront.net/EdgeAvatar.png'
     );
     this.load.image(
       'ElectricMeanAvatar',
-      'https://d1ofwchetll7ui.cloudfront.net/avatars/ElectricMean.png'
+      'https://d1ofwchetll7ui.cloudfront.net/ElectricMeanAvatar.png'
     );
     this.load.image(
       'ElkeemaNemoAvatar',
-      'https://d1ofwchetll7ui.cloudfront.net/avatars/Elkeema.png'
+      'https://powers.s3.amazonaws.com/ElkeemaAvatar.png'
     );
     this.load.image(
       'JohnCarterAvatar',
-      'https://d1ofwchetll7ui.cloudfront.net/avatars/JohnCarter.png'
+      'https://d1ofwchetll7ui.cloudfront.net/JohnCarterAvatar.png'
     );
     this.load.image(
       'KarriganAvatar',
-      'https://d1ofwchetll7ui.cloudfront.net/avatars/Karrigan.png'
+      'https://d1ofwchetll7ui.cloudfront.net/KarriganAvatar.png'
     );
     this.load.image(
       'LarsThundersquatAvatar',
-      'https://d1ofwchetll7ui.cloudfront.net/avatars/LarsThundersquat.png'
+      'https://d1ofwchetll7ui.cloudfront.net/LarsThundersquatAvatar.png'
     );
     this.load.image(
       'LillithAvatar',
-      'https://d1ofwchetll7ui.cloudfront.net/avatars/Lillith.png'
+      'https://d1ofwchetll7ui.cloudfront.net/LillithAvatar.png'
     );
     this.load.image(
       'RandellAvatar',
-      'https://d1ofwchetll7ui.cloudfront.net/avatars/Randell.png'
+      'https://d1ofwchetll7ui.cloudfront.net/RandellAvatar.png'
     );
     this.load.image(
       'SharpySharpAvatar',
-      'https://d1ofwchetll7ui.cloudfront.net/avatars/SharpySharp.png'
+      'https://powers.s3.amazonaws.com/SharpySharpAvatar.png'
     );
 
     this.load.multiatlas(
