@@ -30,58 +30,22 @@ class BootScene extends Phaser.Scene {
       'button_hover',
       'https://d1ofwchetll7ui.cloudfront.net/button_hover.png'
     );
-    this.load.image(
-      'CharityAvatar',
-      'https://d1ofwchetll7ui.cloudfront.net/CharityAvatar.png'
-    );
-    this.load.image(
-      'ArgusAvatar',
-      'https://powers.s3.amazonaws.com/ArgusAvatar.png'
-    );
-    this.load.image(
-      'CaptainNemoAvatar',
-      'https://d1ofwchetll7ui.cloudfront.net/CaptainNemoAvatar.png'
-    );
-    this.load.image(
-      'DejahThorisAvatar',
-      'https://d1ofwchetll7ui.cloudfront.net/DejahThorisAvatar.png'
-    );
-    this.load.image(
-      'EdgeAvatar',
-      'https://d1ofwchetll7ui.cloudfront.net/EdgeAvatar.png'
-    );
-    this.load.image(
-      'ElectricMeanAvatar',
-      'https://d1ofwchetll7ui.cloudfront.net/ElectricMeanAvatar.png'
-    );
-    this.load.image(
-      'ElkeemaNemoAvatar',
-      'https://powers.s3.amazonaws.com/ElkeemaAvatar.png'
-    );
-    this.load.image(
-      'JohnCarterAvatar',
-      'https://d1ofwchetll7ui.cloudfront.net/JohnCarterAvatar.png'
-    );
-    this.load.image(
-      'KarriganAvatar',
-      'https://d1ofwchetll7ui.cloudfront.net/KarriganAvatar.png'
-    );
+    this.load.image('CharityAvatar', '../assets/CharityAvatar.png');
+    this.load.image('ArgusAvatar', '../assets/ArgusAvatar.png');
+    this.load.image('CaptainNemoAvatar', '../assets/CaptainNemoAvatar.png');
+    this.load.image('DejahThorisAvatar', '../assets/DejahThorisAvatar.png');
+    this.load.image('EdgeAvatar', '../assets/EdgeAvatar.png');
+    this.load.image('ElectricMeanAvatar', '../assets/ElectricMeanAvatar.png');
+    this.load.image('ElkeemaNemoAvatar', '../assets/ElkeemaAvatar.png');
+    this.load.image('JohnCarterAvatar', '../assets/JohnCarterAvatar.png');
+    this.load.image('KarriganAvatar', '../assets/KarriganAvatar.png');
     this.load.image(
       'LarsThundersquatAvatar',
-      'https://d1ofwchetll7ui.cloudfront.net/LarsThundersquatAvatar.png'
+      '../assets/LarsThundersquatAvatar.png'
     );
-    this.load.image(
-      'LillithAvatar',
-      'https://d1ofwchetll7ui.cloudfront.net/LillithAvatar.png'
-    );
-    this.load.image(
-      'RandellAvatar',
-      'https://d1ofwchetll7ui.cloudfront.net/RandellAvatar.png'
-    );
-    this.load.image(
-      'SharpySharpAvatar',
-      'https://powers.s3.amazonaws.com/SharpySharpAvatar.png'
-    );
+    this.load.image('LillithAvatar', '../assets/LillithAvatar.png');
+    this.load.image('RandellAvatar', '../assets/RandellAvatar.png');
+    this.load.image('SharpySharpAvatar', '../assets/SharpySharpAvatar.png');
 
     this.load.multiatlas(
       'Charity',
