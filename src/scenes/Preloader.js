@@ -30,22 +30,22 @@ class BootScene extends Phaser.Scene {
       'button_hover',
       'https://d1ofwchetll7ui.cloudfront.net/button_hover.png'
     );
-    this.load.image('CharityAvatar', '../assets/CharityAvatar.png');
-    this.load.image('ArgusAvatar', '../assets/ArgusAvatar.png');
-    this.load.image('CaptainNemoAvatar', '../assets/CaptainNemoAvatar.png');
-    this.load.image('DejahThorisAvatar', '../assets/DejahThorisAvatar.png');
-    this.load.image('EdgeAvatar', '../assets/EdgeAvatar.png');
-    this.load.image('ElectricMeanAvatar', '../assets/ElectricMeanAvatar.png');
-    this.load.image('ElkeemaNemoAvatar', '../assets/ElkeemaAvatar.png');
-    this.load.image('JohnCarterAvatar', '../assets/JohnCarterAvatar.png');
-    this.load.image('KarriganAvatar', '../assets/KarriganAvatar.png');
+    this.load.image('CharityAvatar', 'assets/CharityAvatar.png');
+    this.load.image('ArgusAvatar', 'assets/ArgusAvatar.png');
+    this.load.image('CaptainNemoAvatar', 'assets/CaptainNemoAvatar.png');
+    this.load.image('DejahThorisAvatar', 'assets/DejahThorisAvatar.png');
+    this.load.image('EdgeAvatar', 'assets/EdgeAvatar.png');
+    this.load.image('ElectricMeanAvatar', 'assets/ElectricMeanAvatar.png');
+    this.load.image('ElkeemaAvatar', 'assets/ElkeemaAvatar.png');
+    this.load.image('JohnCarterAvatar', 'assets/JohnCarterAvatar.png');
+    this.load.image('KarriganAvatar', 'assets/KarriganAvatar.png');
     this.load.image(
       'LarsThundersquatAvatar',
-      '../assets/LarsThundersquatAvatar.png'
+      'assets/LarsThundersquatAvatar.png'
     );
-    this.load.image('LillithAvatar', '../assets/LillithAvatar.png');
-    this.load.image('RandellAvatar', '../assets/RandellAvatar.png');
-    this.load.image('SharpySharpAvatar', '../assets/SharpySharpAvatar.png');
+    this.load.image('LillithAvatar', 'assets/LillithAvatar.png');
+    this.load.image('RandellAvatar', 'assets/RandellAvatar.png');
+    this.load.image('SharpySharpAvatar', 'assets/SharpySharpAvatar.png');
 
     this.load.multiatlas(
       'Charity',

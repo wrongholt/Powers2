@@ -13,7 +13,6 @@ class CharacterSelectionScene extends Phaser.Scene {
     background.setSize(newWidth, newHeight);
     background.setScale(newWidth / 1080);
     background.play(true);
-    var newChar = chacterContainer(this);
     const charArray = [
       'Argus',
       'Charity',
@@ -29,149 +28,132 @@ class CharacterSelectionScene extends Phaser.Scene {
       'DejahThoris',
       'JohnCarter',
     ];
-    // this.anims.create({
-    //   key: 'characteranimation0',
-    //   frames: this[charArray[0]],
-    //   frameRate: 8,
-    //   repeat: -1,
-    // });
-    // this.anims.create({
-    //   key: 'characteranimation1',
-    //   frames: this[charArray[1]],
-    //   frameRate: 8,
-    //   repeat: -1,
-    // });
-    // this.anims.create({
-    //   key: 'characteranimation2',
-    //   frames: this[charArray[2]],
-    //   frameRate: 8,
-    //   repeat: -1,
-    // });
-    // this.anims.create({
-    //   key: 'characteranimation3',
-    //   frames: this[charArray[3]],
-    //   frameRate: 8,
-    //   repeat: -1,
-    // });
-    // this.anims.create({
-    //   key: 'characteranimation4',
-    //   frames: this[charArray[4]],
-    //   frameRate: 8,
-    //   repeat: -1,
-    // });
-    // this.anims.create({
-    //   key: 'characteranimation5',
-    //   frames: this[charArray[5]],
-    //   frameRate: 8,
-    //   repeat: -1,
-    // });
-    // this.anims.create({
-    //   key: 'characteranimation6',
-    //   frames: this[charArray[6]],
-    //   frameRate: 8,
-    //   repeat: -1,
-    // });
-    // this.anims.create({
-    //   key: 'characteranimation7',
-    //   frames: this[charArray[7]],
-    //   frameRate: 8,
-    //   repeat: -1,
-    // });
-    // this.anims.create({
-    //   key: 'characteranimation8',
-    //   frames: this[charArray[8]],
-    //   frameRate: 8,
-    //   repeat: -1,
-    // });
-    // this.anims.create({
-    //   key: 'characteranimation9',
-    //   frames: this[charArray[9]],
-    //   frameRate: 8,
-    //   repeat: -1,
-    // });
-    // this.anims.create({
-    //   key: 'characteranimation10',
-    //   frames: this[charArray[10]],
-    //   frameRate: 8,
-    //   repeat: -1,
-    // });
-    // this.anims.create({
-    //   key: 'characteranimation11',
-    //   frames: this[charArray[11]],
-    //   frameRate: 8,
-    //   repeat: -1,
-    // });
-    // this.anims.create({
-    //   key: 'characteranimation12',
-    //   frames: this[charArray[12]],
-    //   frameRate: 8,
-    //   repeat: -1,
-    // });
-
-    // character0.anims.play('characteranimation0');
-    // character1.anims.play('characteranimation1');
-    // character2.anims.play('characteranimation2');
-    // character3.anims.play('characteranimation3');
-    // character4.anims.play('characteranimation4');
-    // character5.anims.play('characteranimation5');
-    // character6.anims.play('characteranimation6');
-    // character7.anims.play('characteranimation7');
-    // character8.anims.play('characteranimation8');
-    // character9.anims.play('characteranimation9');
-    // character10.anims.play('characteranimation10');
-    // character11.anims.play('characteranimation11');
-    // character12.anims.play('characteranimation12');
+    for (var i = 0; i < charArray.length; ) {
+      this['characterAnim' + charArray[i]] = new CharacterClass(
+        this,
+        -150,
+        0,
+        charArray[i],
+        charArray[i] + 'Idle_000.png'
+      );
+      this['characterAnim' + charArray[i]].setVisible(false);
+      i++;
+    }
+    var newChar = chacterContainer(this);
     Phaser.Actions.GridAlign(newChar, {
-      width: 7,
-      height: 2,
-      cellWidth: 200,
-      cellHeight: 450,
-      x: 20,
-      y: 250,
+      width: 5,
+      height: 3,
+      cellWidth: newWidth / 8,
+      cellHeight: newWidth / 8,
+      x: newWidth / 5,
+      y: -newWidth / 9,
     });
+
+    this.input
+      .on('pointerdown', function (pointer, gameObject) {
+        console.log(gameObject);
+
+        this.id = gameObject[0].getData('id');
+
+        gameObject[0].setTint(11843512);
+        // debugger;
+        if (this.theLastCharacter) {
+          this.theLastCharacter.setVisible(false);
+        }
+        this.theLastCharacter = this.scene['characterAnim' + this.id];
+        this.scene['characterAnim' + this.id].setVisible(true);
+
+        this.scene.anims.create({
+          key: this.id + 'animation',
+          frames: this.scene[this.id],
+          frameRate: 8,
+          repeat: -1,
+        });
+
+        this.scene['characterAnim' + this.id].anims.play(this.id + 'animation');
+      })
+      .on('pointerover', function (pointer, gameObject) {
+        console.log(gameObject);
+
+        this.id = gameObject[0].getData('id');
+        gameObject[0].setTint(11843512);
+        this.scene.tweens.chain({
+          targets: gameObject[0],
+          tweens: [
+            {
+              scale: 0.22,
+              ease: 'Bounce.easeIn',
+              delay: 0,
+              duration: 200,
+            },
+            {
+              scale: 0.2,
+              ease: 'Bounce.easeOut',
+              delay: 0,
+              duration: 200,
+            },
+          ],
+        });
+      })
+      .on('pointerout', function (pointer, gameObject) {
+        gameObject[0].clearTint();
+        // this.scene['characterAnim' + this.id].setVisible(false);
+      })
+      .on('pointerup', function (pointer, gameObject) {
+        gameObject[0].clearTint();
+      });
+    var button1Container3 = this.add.container(newWidth / 2, newHeight / 1.2);
+    // .setSize(newWidth / 3.5, newHeight / 5.5);
+
+    var button3 = this.add.image(0, 0, 'button').setInteractive();
+    button3.setScale(newWidth / 1200);
+    var button1Text3 = this.add
+      .text(0, 0, `Fight`, {
+        fontFamily: '"Sedgwick Ave Display"',
+        fontSize: '3vh',
+      })
+      .setOrigin(0.5);
+    button3
+      .on('pointerdown', function (pointer) {
+        this.setTint(11843512);
+        button1Text3.setFontSize('3.5vh');
+        this.scene.scene.start('CharacterSelectionScene');
+      })
+      .on('pointerover', function (pointer) {
+        this.setTint(11843512);
+        button1Text3.setFontSize('3.5vh');
+        this.scene.tweens.chain({
+          targets: this,
+          tweens: [
+            {
+              scale: newWidth / 1000,
+              ease: 'Bounce.easeIn',
+              delay: 0,
+              duration: 200,
+            },
+            {
+              scale: newWidth / 1200,
+              ease: 'Bounce.easeOut',
+              delay: 0,
+              duration: 200,
+            },
+          ],
+        });
+      })
+      .on('pointerout', function (pointer) {
+        this.clearTint();
+        button3.setScale(newWidth / 1200);
+        button1Text3.setFontSize('3vh');
+      })
+      .on('pointerup', function (pointer) {
+        this.clearTint();
+        button3.setScale(newWidth / 1200);
+        button1Text3.setFontSize('3vh');
+      });
+    button1Container3.add(button3).add(button1Text3);
   }
 }
-// Add 13 characters to the scene, randomly spread out without overlapping
-// var characters = [];
 
-// for (var i = 0; i < 13; i++) {
-//   var character = new Phaser.Sprite({
-//     key: 'character' + i,
-//     x: 0,
-//     y: 0,
-//     src: 'assets/characters/character' + i + '.png'
-//   });
-
-//   // Check if the character can be placed at the current location
-//   var canPlace = true;
-
-//   for (var j = 0; j < characters.length; j++) {
-//     if (characters[j].x === character.x && characters[j].y === character.y) {
-//       canPlace = false;
-//       break;
-//     }
-//   }
-
-//   // If the character can be placed, add it to the scene
-//   if (canPlace) {
-//     characters.push(character);
-//     mainScene.add(character);
-//   }
-// }
-// Add 13 characters to the scene, randomly spread out on a grid of random size
-// var width = Math.floor(Math.random() * 2) + 2;
-// var height = Math.floor(Math.random() * 2) + 2;
-
-// for (var i = 0; i < 13; i++) {
-//   var character = new Phaser.Sprite({
-//     key: 'character' + i,
-//     x: Math.floor(Math.random() * game.width / width) * width,
-//     y: Math.floor(Math.random() * game.height / height) * height,
-//     src: 'assets/characters/character' + i + '.png'
-//   });
-
-//   mainScene.add(character);
-// }
 function chacterContainer(scene) {
   const charArray = [
     'Argus',
@@ -188,12 +170,33 @@ function chacterContainer(scene) {
     'DejahThoris',
     'JohnCarter',
   ];
+  const charNames = [
+    'Argus',
+    'Charity',
+    'Edge',
+    'Electric Mean',
+    'Karrigan',
+    'Lars Thundersquat',
+    'Lillith',
+    'Randell',
+    'Sharpy Sharp',
+    'Elkeema',
+    'Captain Nemo',
+    'Dejah Thoris',
+    'John Carter',
+  ];
   var newChar = [];
   for (var i = 0; i < charArray.length; ) {
     var character = charArray[i];
     console.log(character);
-    window[character + 'token'] = scene.add.image(0, 0, character + 'avatar');
-    newChar.push(window[character + 'token']);
+
+    scene[window[character + 'token']] = scene.add
+      .image(0, 0, character + 'Avatar')
+      .setScale(0.2)
+      .setData({ name: charNames[i], id: character })
+      .setInteractive();
+
+    newChar.push(scene[window[character + 'token']]);
     i++;
   }
   console.log('NEW CHAR ARRAY!!!!!!!', newChar);
